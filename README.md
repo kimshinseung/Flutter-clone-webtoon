@@ -26,3 +26,4 @@ A new Webtoon project by Flutter.
   - 비동기일 때 Dart가 그냥 다음 코드로 넘어가는 걸 원치 않을 때
   - 요청의 결과값이 중요하기 때문에
   - await를 사용한다.
+- jsonDecode를 사용하여 String을 json파일로 변환할 수 있다.(반환값은 dynamic)
