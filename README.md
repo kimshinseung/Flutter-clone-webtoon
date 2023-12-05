@@ -55,3 +55,12 @@ return ListView(
 >  return ListView.separated( separatorBuilder: (context, index) => SizedBox(
 width: 20,
 ),
+-  Image.network(webtoon.thumb) - 이미지를 url경로로 설정한다.
+- 시뮬레이터에서 403에러 날 때 사용
+```
+ Image.network( webtoon.thumb,
+                    headers: const {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36",},),
+                  Text(webtoon.title)
+```
+-   borderRadius: BorderRadius.circular(10)를 사용했는데 적용안될 경우
+> clipBehavior때문이다. 이것은 자식의 부모영역 침범을 제어하는 방법이다. => clipBehavior: Clip.hardEdge,
