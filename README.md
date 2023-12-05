@@ -52,3 +52,6 @@ return ListView(
 - ListView와 ListView.builder의 차이점
 > LisetView는 한번에 모든 데이터를 가져오지만 builder는 필요할 부분만 가져온다.
 - ListView.separated를 사용해서 각 아이템들을 분리할 수 있다.
+>  return ListView.separated( separatorBuilder: (context, index) => SizedBox(
+width: 20,
+),
