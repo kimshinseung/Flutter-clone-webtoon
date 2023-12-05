@@ -28,7 +28,7 @@ A new Webtoon project by Flutter.
   - await를 사용한다.
 - jsonDecode를 사용하여 String을 json파일로 변환할 수 있다.(반환값은 dynamic)
 - 원래는 setState()를 사용해서 화면을 업데이트해줘야 해서 statefulwidget로
-만들었는데, Future를 사용해서 비동기 작업을 처리해주는 위젯을 사용하니까 statelesswidget사용가능
+만들었는데, FutureBuilder를 사용해서 비동기 작업을 처리해주는 위젯을 사용하니까 statelesswidget사용가능
 ```
 ex)body: FutureBuilder(
   future: webtoons,
@@ -40,3 +40,15 @@ ex)body: FutureBuilder(
   },
   )
   ```
+- CircularProgressIndicator() -> 프로그래스바 표시
+- ListView사용법
+```
+return ListView(
+              children: [
+                for(var webtoon in snapshot.data!) Text(webtoon.title)
+              ],
+            );
+```
+- ListView와 ListView.builder의 차이점
+> LisetView는 한번에 모든 데이터를 가져오지만 builder는 필요할 부분만 가져온다.
+- ListView.separated를 사용해서 각 아이템들을 분리할 수 있다.
