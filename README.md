@@ -64,3 +64,10 @@ width: 20,
 ```
 -   borderRadius: BorderRadius.circular(10)를 사용했는데 적용안될 경우
 > clipBehavior때문이다. 이것은 자식의 부모영역 침범을 제어하는 방법이다. => clipBehavior: Clip.hardEdge,
+
+- 클릭 이벤트 감지 (GestureDetector) - 위젯의 한 종류
+> return GestureDetector(
+onTap: (){ };
+- MaterialPageRoute
+>하나의 클래스이며 statelesswidget을 route로 감싸서 다른 스크린처럼 보여줌
+> fullscreenDialog: true 하면 스크린이 아래서 올라옴 아이콘은 X로(안하면 옆에서, 아이콘은 뒤로가기)
