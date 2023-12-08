@@ -71,3 +71,5 @@ onTap: (){ };
 - MaterialPageRoute
 >하나의 클래스이며 statelesswidget을 route로 감싸서 다른 스크린처럼 보여줌
 > fullscreenDialog: true 하면 스크린이 아래서 올라옴 아이콘은 X로(안하면 옆에서, 아이콘은 뒤로가기)
+- HeroWidget
+> 화면을 전환활 때 애니메이션을 제공하는 위젯, 두 개의 화면에 각각사용하고 같은 태그를 사용한다, 컨테이너에 위젯 적용
