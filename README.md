@@ -15,6 +15,16 @@ A new Webtoon project by Flutter.
     -   2. 터미널에 flutter pub add http 커멘드 실행
     -   3. 터미널에 dart pub add http 커맨드 실행 
   7. https://webtoon-crawler.nomadcoders.workers.dev/ 링크 사용
+  8. url_launcher패키지 설치하여 앱에서 웹사이트 열기
+  >  "flutter pub add url_launcher"
+> xml을 AndroidManifest.xml파일에 추가해야된다.
+  9. launchUrl은 Future을 가져다 주는 기능이기 때문에 await를 써줘야 한다.
+```
+onButtonTap() async{
+    //final url = Uri.parse("https://google.com");
+    await launchUrlString("https://comic.naver.com/webtoon/detail?titleId=$webtoonId&no=${episode.id}");
+  }
+```
 
 # 새로 안 정보들
 - 위젯은 key를 가지고 있고, Id처럼 사용한다.

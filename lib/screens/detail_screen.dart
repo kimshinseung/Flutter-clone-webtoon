@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webtoon_app/services/api_service.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../model/webtoon_detail_model.dart';
 import '../model/webtoon_episode_model.dart';
+import '../widgets/episode_widget.dart';
 
 class DetailScreen extends StatefulWidget {
   final String title, thumb, id;
@@ -112,30 +115,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       return Column(
                         children: [
                           for(var episode in snapshot.data!)
-                            Container(
-                              margin: EdgeInsets.only(bottom: 10),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.green.shade400,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 10,horizontal: 20,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(episode.title
-                                    ,style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                      ),),
-                                    const Icon(Icons.chevron_right_rounded,
-                                    color: Colors.white,),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            Episode(episode: episode,webtoonId: widget.id),
                         ],
                       );
                     }
@@ -148,3 +128,45 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 }
+//
+// class Episode extends StatelessWidget {
+//   const Episode({
+//     Key? key,
+//     required this.episode,
+//   }) : super(key: key);
+//
+//   final WebtoonEpisodeModel episode;
+//
+//   onButtonTap() async{
+//     //final url = Uri.parse("https://google.com");
+//     await launchUrlString("https://google.com");
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       margin: EdgeInsets.only(bottom: 10),
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(20),
+//         color: Colors.green.shade400,
+//       ),
+//       child: Padding(
+//         padding: const EdgeInsets.symmetric(
+//           vertical: 10,horizontal: 20,
+//         ),
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             Text(episode.title
+//             ,style: const TextStyle(
+//                 color: Colors.white,
+//                 fontSize: 16,
+//               ),),
+//             const Icon(Icons.chevron_right_rounded,
+//             color: Colors.white,),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
