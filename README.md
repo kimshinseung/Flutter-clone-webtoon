@@ -25,6 +25,11 @@ onButtonTap() async{
     await launchUrlString("https://comic.naver.com/webtoon/detail?titleId=$webtoonId&no=${episode.id}");
   }
 ```
+  10. shared_preferences사용해서 내부데이터 저장
+>flutter pub add shared_preferences 설치
+> Future initPrefs() async{
+prefs = await SharedPreferences.getInstance();//저장소와 연결
+} 저장소와 연결
 
 # 새로 안 정보들
 - 위젯은 key를 가지고 있고, Id처럼 사용한다.
